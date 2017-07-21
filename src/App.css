@@ -1,3 +1,6 @@
+.App {
+  padding: 3%;
+}
 .signup-form {
   margin: 5%;
 }
@@ -12,4 +15,15 @@
 
 .signin-input {
   margin-right: 5px;
+}
+
+.item-add-goal {
+  margin-bottom: 5px;
+}
+.item-goal {
+  font-size: 18px;
+  margin: 5px;
+}
+.button-complete {
+  margin-left: 5px;
 }

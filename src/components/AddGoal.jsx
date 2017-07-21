@@ -11,14 +11,14 @@ class AddGoal extends Component {
   }
 
   addGoal() {
-    const { email } = this.props;
+    console.log('in addGoal', this.props)
+    const { email } = this.props.user;
     const { title } = this.state;
-    fireDatabase.ref('goals/').push({email, title});
-    console.log(email, title);
+    fireDatabase.ref('goals/').push({email, title, isdone: false});
   }
   render() {
     return (
-      <div className = 'form-inline'>
+      <div className = 'form-inline item-add-goal'>
         <div className = 'form-group'>
           <input
             type = 'text'
@@ -33,15 +33,15 @@ class AddGoal extends Component {
             Add Goal
           </button>
         </div>
-
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
+  const { user } = state;
   return {
-    email: state.email
+    user
   }
 }
 export default connect(mapStateToProps, null)(AddGoal);
